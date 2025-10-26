@@ -6,7 +6,11 @@ import { JWT_SECRET } from "../config/index.js";
 declare global {
     namespace Express {
         interface Request {
-            user?: string | jwt.JwtPayload;
+            user?: {
+                id: string,
+                username: string,
+                iat: number
+            } | jwt.JwtPayload;
         }
     }
 }

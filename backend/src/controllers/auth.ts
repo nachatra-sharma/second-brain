@@ -44,7 +44,7 @@ export const handleLogin = async (req:Request, res: Response) => {
 
     const token = jwt.sign({id: user._id, username: user.username}, JWT_SECRET as string)
 
-    return res.status(status.StatusCodes.OK).json({
+    return res.status(status.StatusCodes.CREATED).json({
         success: true,
         message: 'Login successful',
         data: {
