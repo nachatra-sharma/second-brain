@@ -17,7 +17,11 @@ const contentSchema = new mongoose.Schema({
     tags: [{
         type: mongoose.Types.ObjectId,
         ref: 'Tags',
-    }]
+    }],
+    public: {
+        type: Boolean,
+        default: false,
+    }
 }, {
     timestamps: true
 })
